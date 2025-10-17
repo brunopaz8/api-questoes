@@ -11,7 +11,7 @@ namespace api_questoes.Interface
     {
         public Task<Questao> Create(QuestaoDTOCreate dto);
         public Task<Questao> GetById(int id);
-        public Task<List<Questao>> GetByMateria(List<string> materia);
+        public Task<List<Questao>> GetByMateria(List<string> materia, int dificuldade);
         public Task Update(int id, QuestaoDTOCreate dto);
         public Task Delete(int id);
     }

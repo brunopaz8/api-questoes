@@ -55,13 +55,13 @@ public class QuestaoService : IQuestaoService
         return questao;
     }
 
-    public async Task<List<Questao>> GetByMateria(List<string> materias)
+    public async Task<List<Questao>> GetByMateria(List<string> materias, int dificuldade)
     {
         if (materias == null || !materias.Any())
             return new List<Questao>();
 
         return await _Context.Questoes
-            .Where(q => materias.Contains(q.Materia))
+            .Where(q => materias.Contains(q.Materia) && q.NivelDificuldade == dificuldade )
             .ToListAsync();
     }
 

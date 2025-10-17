@@ -53,9 +53,9 @@ namespace api_questoes.Controllers
         }
 
         [HttpGet("materia")]
-        public async Task<IActionResult> GetByMateria([FromQuery] List<string> materias)
+        public async Task<IActionResult> GetByMateria([FromQuery] List<string> materias, int dificuldade)
         {
-            var questoes = await _service.GetByMateria(materias);
+            var questoes = await _service.GetByMateria(materias, dificuldade);
             return Ok(questoes);
         }
 
